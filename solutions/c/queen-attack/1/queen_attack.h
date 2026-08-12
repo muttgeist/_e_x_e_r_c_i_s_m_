@@ -1,0 +1,23 @@
+#ifndef QUEEN_ATTACK_H
+#define QUEEN_ATTACK_H
+
+#include <stdint.h>
+#include <stdbool.h>
+
+typedef enum {
+    CAN_NOT_ATTACK,
+    CAN_ATTACK,
+    INVALID_POSITION } attack_status_t;
+
+typedef struct {
+   uint8_t row;
+   uint8_t column;
+} position_t;
+
+attack_status_t can_attack(position_t queen_1, position_t queen_2);
+bool is_diagonal(position_t queen_1, position_t queen_2);
+bool is_lines(position_t queen_1, position_t queen_2);
+bool is_same_spot(position_t queen_1, position_t queen_2);
+bool is_on_board(position_t queen_1, position_t queen_2);
+
+#endif        
